@@ -42,13 +42,13 @@ private static final long serialVersionUID=1L;
      * 用户添加时间
      */
     @TableField("userAddTime ")
-    private String userAddTime ;
+    private String userAddTime;
 
     /**
      * 用户修改时间
      */
     @TableField("userUptaTime ")
-    private String userUptaTime ;
+    private String userUptaTime;
 
     /**
      * 角色id
@@ -62,6 +62,24 @@ private static final long serialVersionUID=1L;
     @TableField("userLock")
     private Integer userLock;
 
+
+    @Override
+    public String toString() {
+        return "GUser{" +
+                "id=" + id +
+                ", userName='" + userName + '\'' +
+                ", userAccount='" + userAccount + '\'' +
+                ", userPasswd='" + userPasswd + '\'' +
+                ", userAddTime='" + userAddTime + '\'' +
+                ", userUptaTime='" + userUptaTime + '\'' +
+                ", userRoleid='" + userRoleid + '\'' +
+                ", userLock=" + userLock +
+                '}';
+    }
+
+    public static long getSerialVersionUID() {
+        return serialVersionUID;
+    }
 
     public Integer getId() {
         return id;
@@ -95,20 +113,20 @@ private static final long serialVersionUID=1L;
         this.userPasswd = userPasswd;
     }
 
-    public String getUserAddTime () {
-        return userAddTime ;
+    public String getUserAddTime() {
+        return userAddTime;
     }
 
-    public void setUserAddTime (String userAddTime ) {
-        this.userAddTime  = userAddTime ;
+    public void setUserAddTime(String userAddTime) {
+        this.userAddTime = userAddTime;
     }
 
-    public String getUserUptaTime () {
-        return userUptaTime ;
+    public String getUserUptaTime() {
+        return userUptaTime;
     }
 
-    public void setUserUptaTime (String userUptaTime ) {
-        this.userUptaTime  = userUptaTime ;
+    public void setUserUptaTime(String userUptaTime) {
+        this.userUptaTime = userUptaTime;
     }
 
     public String getUserRoleid() {
@@ -125,19 +143,5 @@ private static final long serialVersionUID=1L;
 
     public void setUserLock(Integer userLock) {
         this.userLock = userLock;
-    }
-
-    @Override
-    public String toString() {
-        return "GUser{" +
-        "id=" + id +
-        ", userName=" + userName +
-        ", userAccount=" + userAccount +
-        ", userPasswd=" + userPasswd +
-        ", userAddTime =" + userAddTime  +
-        ", userUptaTime =" + userUptaTime  +
-        ", userRoleid=" + userRoleid +
-        ", userLock=" + userLock +
-        "}";
     }
 }
