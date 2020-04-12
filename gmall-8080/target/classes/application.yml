@@ -1,0 +1,62 @@
+server:
+  port: 8090
+
+
+#mybatis puls
+mybatis-plus:
+  type-aliases-package: com.buba.gmall8080.pojo
+  mapper-locations: classpath:mapper/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+
+
+
+    #mybatis:
+    # config-location: classpath:mybatis/mybatis.cfg.xml        # mybatis配置文件所在路径
+    #type-aliases-package: com.buba.home.base.pojo    # 所有Entity别名类所在包
+    #mapper-locations:
+    # - classpath:mapper/*.xml                       # mapper映射文件
+    #configuration:
+    #map-underscore-to-camel-case: true     #驼峰命名
+
+
+spring:
+  application:
+    name: gmall1806
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource            # 当前数据源操作类型
+    driver-class-name: com.mysql.jdbc.Driver     # mysql驱动包
+    url: jdbc:mysql://39.106.51.152:3306/gmall1806?useSSL=false&characterEncoding=utf-8    # 数据库名称
+    username: root
+    password: root
+    dbcp2:
+      min-idle: 5                                           # 数据库连接池的最小维持连接数
+      initial-size: 5                                       # 初始化连接数
+      max-total: 5                                          # 最大连接数
+      max-wait-millis: 200                                  # 等待连接获取的最大超时时间
+
+    # 配置redis连接
+  redis:
+    host: master
+    port: 6379
+
+    #配置Rabbitmq ip
+  rabbitmq:
+    host: master
+    #对象参数为null的不加入json里
+  jackson:
+    default-property-inclusion: non_null
+
+# 打印sql语句
+#logging:
+#  level:
+#    com.buba.mapper: debug
+
+#阿里云oss服务器
+aliyun:
+  access-id: LTAI4FgoqPc6enDjoEEk656A
+  access-key: 9Wms1jqjl2k7UEupXJuWRJdp9uL6g5
+  bucket: oss-xys #创建bucket的名称
+  endpoint: oss-cn-beijing.aliyuncs.com #服务器地址
+  dir: jxcerp #文件路径
+
